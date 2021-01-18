@@ -1,17 +1,22 @@
 import sys
-sys.path.append("C:/Users/USER/PycharmProjects/week1/")
+from core import *
 
-from kiwoom.kiwoom import *
-from PyQt5.QtWidgets import *
 
-class Main():
-    def __init__(self):
-        print("Main() start")
+class StockWeek:
+    def __init__(self, argv):
+        if len(argv) > 1:
+            if argv[1] == "-d":
+                logging.basicConfig(level=logging.DEBUG)
+        else:
+            logging.basicConfig(level=logging.INFO)
+        logging.debug("StockWeek started")
 
-        self.app = QApplication(sys.argv) # PyQt5로 실행할 파일명을 자동 설정
-        self.kiwoom = Kiwoom() # 키움 클래스 실행
-        self.app.exec_() # 이벤트 루프 실행
+        Account()
+        Market()
+        AccountStock()
+        OrderStock()
+        MarketStock()
 
 
 if __name__ == "__main__":
-    Main()
+    StockWeek(sys.argv)
