@@ -1,0 +1,6 @@
+[2021-02-18 19:41:02,406] I __init__.py | Kiwoom-logging-0041 I  > started
+[2021-02-18 19:41:24,474] I __init__.py | logging-0041  > started
+[2021-02-18 19:43:12,097] I __init__.py | logging-0041  > started
+[2021-02-18 19:43:16,467] I __init__.py | logging-0041  > 로그인 시도
+[2021-02-18 19:43:26,344] I __init__.py | logging-0041  > 정상처리
+[2021-02-18 19:44:04,322] I __init__.py | logging-0041  > 통신연결종료
