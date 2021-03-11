@@ -1,0 +1,15 @@
+[2021-03-08 09:21:13,585] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-08 09:21:14,325] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-08 09:54:25,837] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-08 09:54:26,471] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-08 09:54:46,793] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-03-08 09:54:57,267] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-03-08 09:55:07,970] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-03-08 10:25:09,146] I stockweek.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-08 10:25:09,786] I stockweek.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-08 10:26:38,274]  |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-08 10:26:38,921]  |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-08 11:14:52,336] | Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-08 11:14:52,985] | Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-08 11:14:58,515] | Kiwoom  > 로그인 시도
+[2021-03-08 11:16:19,044] | Kiwoom  > 로그인 시도

@@ -1,5 +1,4 @@
 from enum import Enum
-import logging
 
 
 class StockType(Enum):
@@ -17,7 +16,6 @@ class OrderType(Enum):
 
 class Stock:
     def __init__(self):
-        logging.debug("Stock created")
         self.code = None
         self.name = None
         self.type = None
@@ -28,7 +26,6 @@ class Stock:
 class AccountStock(Stock):
     def __init__(self):
         super().__init__()
-        logging.debug("Account Stock created")
         self.type = StockType.ACCOUNT
         self.quantity = None
 
@@ -36,7 +33,6 @@ class AccountStock(Stock):
 class OrderStock(Stock):
     def __init__(self):
         super().__init__()
-        logging.debug("Order Stock created")
         self.type = StockType.ORDER
         self.orderType = None
         self.quantity = None
@@ -45,5 +41,4 @@ class OrderStock(Stock):
 class MarketStock(Stock):
     def __init__(self):
         super().__init__()
-        logging.debug("Market Stock created")
         self.type = StockType.ORDER

@@ -1,0 +1,13 @@
+[2021-02-25 13:49:32,530] I stockweek.py |  Kiwoom  > 로그인 시도
+[2021-02-25 14:57:35,594] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-02-25 14:57:48,688] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-02-25 15:41:14,890] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-02-25 15:42:58,791] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-02-25 15:43:15,767] I mainui.py |  Kiwoom  > 정상처리
+[2021-02-25 15:43:15,772] I mainui.py |  Kiwoom  > 준비중(로그인완료)
+[2021-02-25 16:34:04,966] I mainui.py |  Kiwoom  > 로그인 시도
+[2021-02-25 16:34:40,218] I mainui.py |  Kiwoom  > 정상처리
+[2021-02-25 16:34:40,220] I mainui.py |  Kiwoom  > 준비중(로그인완료)
+[2021-02-25 16:34:42,190] I mainui.py |  Kiwoom  > 동작중
+[2021-02-25 16:34:43,975] I mainui.py |  Kiwoom  > 정지
+[2021-02-25 16:34:51,807] I mainui.py |  Kiwoom  > 로그인 시도

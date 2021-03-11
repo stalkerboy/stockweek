@@ -1,0 +1,100 @@
+[2021-03-06 13:42:29,639] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 13:42:32,024] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:16:40,946] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:16:43,466] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:31:33,218] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:34:46,049] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:35:43,385] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:36:05,369] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:37:28,591] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:37:41,264] I mainui.py |  Kiwoom  > 매매전략 변경simpleSell
+[2021-03-06 14:37:46,578] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:37:48,866] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:38:39,718] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:38:42,038] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:38:43,584] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:38:46,688] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:45:39,390] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:45:42,462] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:45:47,708] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:45:52,627] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:45:54,462] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:45:58,526] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:48:25,082] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:48:27,137] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:48:28,644] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:48:31,236] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:49:04,556] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:49:06,852] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:49:08,152] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:49:09,786] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:49:11,236] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:49:53,241] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:49:54,705] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:49:55,932] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:50:01,180] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:51:31,448] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:51:32,976] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:51:34,539] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:52:15,864] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:52:17,225] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:52:18,035] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:52:19,227] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:53:22,457] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:53:24,218] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:53:26,047] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:53:27,487] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:53:28,370] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:53:28,373] I mainui.py |  Kiwoom  > buy Type : SimpleBuy 실행
+[2021-03-06 14:53:28,373] I mainui.py |  Kiwoom  > sell Type : SimpleSell 실행
+[2021-03-06 14:53:49,506] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:55:08,959] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 14:55:10,335] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 14:55:12,417] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 14:55:22,193] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 14:55:24,425] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:13:59,747] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 15:14:01,811] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 15:14:03,118] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:14:06,998] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:20:08,747] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 15:20:10,139] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 15:20:11,997] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:20:15,341] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:20:17,293] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:21:09,362] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 15:21:10,987] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 15:21:12,677] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:21:14,533] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:24:33,532] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:25:55,427] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:27:07,779] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:27:17,203] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:27:47,698] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:29:25,369] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:29:26,424] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:29:28,137] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:30:52,123] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:31:31,152] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:32:10,893] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:34:12,558] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 15:34:14,085] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 15:34:22,899] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:34:24,958] I mainui.py |  Kiwoom  > buy Type : SimpleBuy 실행
+[2021-03-06 15:34:24,959] I mainui.py |  Kiwoom  > sell Type : SimpleSell 실행
+[2021-03-06 15:35:18,220] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 15:35:20,836] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 15:35:31,862] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:35:46,158] I mainui.py |  Kiwoom  > sell Type : SimpleSell 실행
+[2021-03-06 15:37:42,414] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:37:44,646] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:37:46,398] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:37:47,950] I mainui.py |  Kiwoom  > 정지
+[2021-03-06 15:38:08,908] I mainui.py |  Kiwoom  > 매수전략 변경 : simpleBuy
+[2021-03-06 15:38:10,867] I mainui.py |  Kiwoom  > 매매전략 변경 : simpleSell
+[2021-03-06 15:38:12,030] I mainui.py |  Kiwoom  > 동작중
+[2021-03-06 15:38:12,032] I mainui.py |  Kiwoom  > buy Type : SimpleBuy 실행
+[2021-03-06 15:38:12,033] I mainui.py |  Kiwoom  > 1000실행되었습니다.
+[2021-03-06 15:38:12,033] I mainui.py |  Kiwoom  > sell Type : SimpleSell 실행
+[2021-03-06 15:38:12,034] I mainui.py |  Kiwoom  > 1000실행되었습니다.
+[2021-03-06 15:38:22,677] I mainui.py |  Kiwoom  > 정지

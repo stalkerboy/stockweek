@@ -43,6 +43,19 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="pauseBtn">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>PAUSE</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="stopBtn">
         <property name="enabled">
          <bool>false</bool>
@@ -65,7 +78,7 @@
       <item>
        <widget class="QCheckBox" name="activateCB">
         <property name="text">
-         <string>매매실행</string>
+         <string>매매</string>
         </property>
        </widget>
       </item>
@@ -90,14 +103,10 @@
       <item>
        <widget class="QLabel" name="buyLabel">
         <property name="text">
-         <string>TextLabel</string>
+         <string>BuyLabel</string>
         </property>
        </widget>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
        <widget class="QPushButton" name="sellBtn">
         <property name="text">
@@ -108,7 +117,18 @@
       <item>
        <widget class="QLabel" name="sellLabel">
         <property name="text">
-         <string>TextLabel</string>
+         <string>SellLabel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QPushButton" name="manualBtn">
+        <property name="text">
+         <string>수동매매</string>
         </property>
        </widget>
       </item>
