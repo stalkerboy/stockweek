@@ -127,6 +127,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
        <widget class="QPushButton" name="manualBtn">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>수동매매</string>
         </property>

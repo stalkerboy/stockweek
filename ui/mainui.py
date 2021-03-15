@@ -82,6 +82,8 @@ class MainUI(QMainWindow, form_class):
         self.buyBtn.setEnabled(False)
         self.sellBtn.setEnabled(False)
 
+        self.manualBtn.setEnabled(False)
+
         if running_state == RunningState.STOP:
             self.loginBtn.setEnabled(True)
             self.buyBtn.setEnabled(True)
@@ -91,6 +93,7 @@ class MainUI(QMainWindow, form_class):
             self.stopBtn.setEnabled(True)
             self.buyBtn.setEnabled(True)
             self.sellBtn.setEnabled(True)
+            self.manualBtn.setEnabled(True)
         elif running_state == RunningState.RUNNING:
             self.stopBtn.setEnabled(True)
             self.pauseBtn.setEnabled(True)

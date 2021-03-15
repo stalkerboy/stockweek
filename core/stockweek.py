@@ -2,6 +2,7 @@ from PyQt5.QAxContainer import QAxWidget
 from PyQt5.QtCore import QEventLoop, QObject
 from PyQt5 import QtCore
 from enum import Enum
+import json
 
 from mylogging import Logging
 
@@ -10,9 +11,9 @@ from core.strategy.buy.simple import SimpleBuyStrategy
 from core.strategy.sell.simple import SimpleSellStrategy
 from core.strategy import Strategy
 
-from core.stock import AccountStock, OrderStock, MarketStock
 from core.request import Request
-import json
+from core.resource import Account, Market
+
 
 class RunningState(Enum):
     STOP = '정지'
@@ -43,13 +44,14 @@ class StockWeek(QObject):
             config = json.load(f)
 
         self.request = Request(self.kiwoom, self.detail_account_info_event_loop, config['ACCNO'])
+        # self.receive = Receive(self.kiwoom)
 
         self.kiwoom.OnEventConnect.connect(self.login_slot)
         self.kiwoom.OnReceiveTrData.connect(self.trdata_slot)  # 트랜잭션 요청 관련 이벤트
 
-        self.accountStock = AccountStock()
-        self.accountStock = OrderStock()
-        self.accountStock = MarketStock()
+        # 리소스 정의
+        self.account = Account()
+        self.market = Market()
 
     def login(self):
         self.kiwoom.dynamicCall("CommConnect()")
@@ -84,8 +86,20 @@ class StockWeek(QObject):
 
         self.login_event_loop.exit()
 
-    def trdata_slot(self, err_code):
-        pass
+    def trdata_slot(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
+        self.logging("in trdata sRQName: " + sRQName)
+        param = {'sScrNo': sScrNo, "sRQName": sRQName, "sTrCode": sTrCode, "sRecordName": sRecordName,
+                 "sPrevNext": sPrevNext}
+        try:
+            if sRQName == "예수금상세현황요청":
+                self.request.handle_detail_account_info(self.account, param)
+                self.logging(str(f"deposit : {self.account.deposit}"))
+                self.logging(str(f"예수금 : {self.account.output_deposit}"))
+            elif sRQName == "계좌평가잔고내역요청":
+                self.request.handle_detail_account_stock(self.account, param)
+
+        except Exception as e:
+            self.logging("err" + str(e))
 
     def logging(self, log):
         self.logger.debug(log)
@@ -117,8 +131,8 @@ class StockWeek(QObject):
         self.sell_strategy.threadLogEvent.connect(self.logging)
         self.logging("매매전략 변경 : " + name)
 
-    def manual_request(self, trade_type, is_good_price, price, quantity):
-        self.logging(f'trade_type:{trade_type} is_good_price:{is_good_price} price:{price} quantity:{quantity}')
+    def manual_request(self, order_type, is_good_price, price, quantity):
+        self.logging(f'order_type:{order_type} is_good_price:{is_good_price} price:{price} quantity:{quantity}')
 
     def request_load_account(self):
         account_list = self.kiwoom.dynamicCall("GetLoginInfo(QString)", "ACCNO")  # 계좌번호 반환
@@ -127,11 +141,25 @@ class StockWeek(QObject):
 
     def onclick_test_btn1(self):
         self.logging('onclick_test_btn1')
-        code_list = self.request.get_code_list_by_market(0)
-        self.logging(str(code_list))
+        try:
+            account_no = self.request.load_account_num()
+            self.logging(str(account_no))
+            # code_list = self.request.get_code_list_by_market(0)
+            # self.logging(str(code_list))
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def onclick_test_btn2(self):
         self.logging('onclick_test_btn2')
+        try:
+            self.request.call_detail_account_info()
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def onclick_test_btn3(self):
         self.logging('onclick_test_btn3')
+        try:
+            self.request.call_detail_account_stock()
+        except Exception as e:
+            self.logging("except" + str(e))
+        self.logging(self.account.str_account_stock())

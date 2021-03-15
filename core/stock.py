@@ -16,11 +16,11 @@ class OrderType(Enum):
 
 class Stock:
     def __init__(self):
+        self.type: StockType = None
         self.code = None
-        self.name = None
-        self.type = None
-        self.price = None
-        self.date = None
+        self.code_nm = None
+        self.current_price = None  # 현재가
+        self.current_time = None
 
 
 class AccountStock(Stock):
@@ -28,13 +28,17 @@ class AccountStock(Stock):
         super().__init__()
         self.type = StockType.ACCOUNT
         self.quantity = None
+        self.buy_price = None  # 매입가
+        self.earning_rate = None  # 수익률(%)
+        self.total_purchase_price = None  # 총 매입금액
+        self.possible_quantity = None  # 매입 가능 갯수
 
 
 class OrderStock(Stock):
     def __init__(self):
         super().__init__()
         self.type = StockType.ORDER
-        self.orderType = None
+        self.orderType: OrderType = None
         self.quantity = None
 
 
