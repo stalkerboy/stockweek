@@ -11,7 +11,8 @@ from core.strategy.sell.simple import SimpleSellStrategy
 from core.strategy import Strategy
 
 from core.stock import AccountStock, OrderStock, MarketStock
-
+from core.request import Request
+import json
 
 class RunningState(Enum):
     STOP = '정지'
@@ -32,10 +33,16 @@ class StockWeek(QObject):
         self.strategy_list = {"buy": {"simpleBuy": SimpleBuyStrategy}, "sell": {"simpleSell": SimpleSellStrategy}}
         self.buy_strategy = Strategy()
         self.sell_strategy = Strategy()
+
         # 로그인 요청용 이벤트루프
         self.login_event_loop = QEventLoop()
 
         self.detail_account_info_event_loop = QEventLoop()  # 예수금 요청용 이벤트루프
+
+        with open('config/config.json') as f:
+            config = json.load(f)
+
+        self.request = Request(self.kiwoom, self.detail_account_info_event_loop, config['ACCNO'])
 
         self.kiwoom.OnEventConnect.connect(self.login_slot)
         self.kiwoom.OnReceiveTrData.connect(self.trdata_slot)  # 트랜잭션 요청 관련 이벤트
@@ -110,5 +117,21 @@ class StockWeek(QObject):
         self.sell_strategy.threadLogEvent.connect(self.logging)
         self.logging("매매전략 변경 : " + name)
 
-    def manual_request(self, trade_type, is_good_price, price):
-        pass
+    def manual_request(self, trade_type, is_good_price, price, quantity):
+        self.logging(f'trade_type:{trade_type} is_good_price:{is_good_price} price:{price} quantity:{quantity}')
+
+    def request_load_account(self):
+        account_list = self.kiwoom.dynamicCall("GetLoginInfo(QString)", "ACCNO")  # 계좌번호 반환
+        account_num = account_list
+        self.logging(f"account_list:{account_list}")
+
+    def onclick_test_btn1(self):
+        self.logging('onclick_test_btn1')
+        code_list = self.request.get_code_list_by_market(0)
+        self.logging(str(code_list))
+
+    def onclick_test_btn2(self):
+        self.logging('onclick_test_btn2')
+
+    def onclick_test_btn3(self):
+        self.logging('onclick_test_btn3')

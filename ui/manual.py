@@ -19,6 +19,10 @@ class ManualUI(QDialog, form_class):
         # button binding
         self.requestBtn.clicked.connect(self.onclick_request_btn)
 
+        self.testBtn1.clicked.connect(self.onclick_test_btn1)
+        self.testBtn2.clicked.connect(self.onclick_test_btn2)
+        self.testBtn3.clicked.connect(self.onclick_test_btn3)
+
         self.program.threadLogEvent.connect(self.logging)
 
     def initialize(self):
@@ -31,8 +35,18 @@ class ManualUI(QDialog, form_class):
         trade_type = "buy" if self.buyRBtn.isChecked() else "sell"
         is_good_price = self.goodCBtn.isChecked()
         price = self.priceSpBox.value()
-        # self.program.manual_request(type, is_good_price, price )
-        QMessageBox.information(self, "request", f'trade_type:{trade_type} is_good_price:{is_good_price} price:{price}')
+        quantity = self.quantitySpBox.value()
+
+        self.program.manual_request(trade_type, is_good_price, price, quantity)
+
+    def onclick_test_btn1(self):
+        self.program.onclick_test_btn1()
+
+    def onclick_test_btn2(self):
+        self.program.onclick_test_btn2()
+
+    def onclick_test_btn3(self):
+        self.program.onclick_test_btn3()
 
     def logging(self, log):
         self.logEditText.appendPlainText(log)

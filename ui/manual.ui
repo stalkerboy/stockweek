@@ -46,7 +46,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,10">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,10,1">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
         <property name="spacing">
@@ -69,28 +69,59 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="4,2">
         <property name="spacing">
          <number>6</number>
         </property>
         <item>
-         <widget class="QCheckBox" name="goodCBtn">
-          <property name="text">
-           <string>호가</string>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1,4">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>가격:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="goodCBtn">
+            <property name="text">
+             <string>호가</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="priceSpBox"/>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QDoubleSpinBox" name="priceSpBox"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="requestBtn">
-          <property name="text">
-           <string>요청</string>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>수량:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="quantitySpBox"/>
+          </item>
+         </layout>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="requestBtn">
+        <property name="text">
+         <string>요청</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -98,13 +129,52 @@
      <widget class="QListView" name="listView"/>
     </item>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QPlainTextEdit" name="logEditText">
       <property name="enabled">
        <bool>false</bool>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="testBtn1">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>270</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>계좌정보요청</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="testBtn2">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>270</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>현재대기요청</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="testBtn3">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>270</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
   </widget>
  </widget>
  <resources/>
