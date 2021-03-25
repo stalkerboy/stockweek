@@ -21,6 +21,8 @@ class Stock:
         self.code_nm = None
         self.current_price = None  # 현재가
         self.current_time = None
+        self.screen_real_stock = None  # 스크린번호
+        self.screen_meme_stock = None  # 주문용스크린번호
 
 
 class AccountStock(Stock):

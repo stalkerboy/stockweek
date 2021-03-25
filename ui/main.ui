@@ -128,7 +128,7 @@
       <item>
        <widget class="QPushButton" name="manualBtn">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="text">
          <string>수동매매</string>

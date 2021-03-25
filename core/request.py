@@ -120,17 +120,16 @@ class Request:
     def call_send_order_buy(self, stock: OrderStock):
         if stock.orderType != OrderType.BUYING:
             return
-        pass
-        # order_success = self.dynamicCall(
-        #     "SendOrder(QString, QString, QString, int, QString, int, int, QString, QString)",
-        #     ["신규매수", self.portfolio_stock_dict[sCode]["주문용스크린번호"], self.account_num, 1, sCode, quantity, e,
-        #      self.realType.SENDTYPE['거래구분']['지정가'], ""]
-        # )
-        #
-        # if order_success == 0:
-        #     self.logging.logger.debug("매수주문 전달 성공")
-        # else:
-        #     self.logging.logger.debug("매수주문 전달 실패")
+        order_success = self.program.dynamicCall(
+            "SendOrder(QString, QString, QString, int, QString, int, int, QString, QString)",
+            ["신규매수", stock.screen_meme_stock, self.account_num, 1, sCode, quantity, e,
+             self.realType.SENDTYPE['거래구분']['지정가'], ""]
+        )
+
+        if order_success == 0:
+            self.logging("매수주문 전달 성공")
+        else:
+            self.logging("매수주문 전달 실패")
 
     def get_code_list_by_market(self, market_code):
         """
