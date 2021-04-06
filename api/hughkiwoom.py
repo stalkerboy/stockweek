@@ -11,31 +11,47 @@ class HughKiwoom(Kiwoom):
     '''
 
     def _handler_login(self, err_code):
-        super()._handler_login(err_code)
-        self.program.handler_login(err_code)
+        try:
+            super()._handler_login(err_code)
+            self.program.handler_login(err_code)
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def _handler_condition_load(self, ret, msg):
-        super()._handler_condition_load(ret, msg)
-        self.program.handler_condition_load(ret, msg)
+        try:
+            super()._handler_condition_load(ret, msg)
+            self.program.handler_condition_load(ret, msg)
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def _handler_tr_condition(self, screen_no, code_list, cond_name, cond_index, next):
-        super()._handler_tr_condition(screen_no, code_list, cond_name, cond_index, next)
-        self.program.handler_tr_condition(screen_no, code_list, cond_name, cond_index, next)
+        try:
+            super()._handler_tr_condition(screen_no, code_list, cond_name, cond_index, next)
+            self.program.handler_tr_condition(screen_no, code_list, cond_name, cond_index, next)
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def _handler_tr(self, screen, rqname, trcode, record, next):
-        super()._handler_tr(screen, rqname, trcode, record, next)
-        self.program.handler_tr(screen, rqname, trcode, record, next)
+        try:
+            super()._handler_tr(screen, rqname, trcode, record, next)
+            self.program.handler_tr(screen, rqname, trcode, record, next)
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def _handler_msg(self, screen, rqname, trcode, msg):
         super()._handler_msg(screen, rqname, trcode, msg)
         self.program.handler_msg(screen, rqname, trcode, msg)
 
     def _handler_chejan(self, gubun, item_cnt, fid_list):
-        super()._handler_chejan(gubun, item_cnt, fid_list)
-        self.program.handler_chejan(gubun, item_cnt, fid_list)
+        try:
+            super()._handler_chejan(gubun, item_cnt, fid_list)
+            self.program.handler_chejan(gubun, item_cnt, fid_list)
+        except Exception as e:
+            self.logging("except" + str(e))
 
     def _set_signals_slots(self):
         super()._set_signals_slots()
+        self.ocx.OnReceiveRealData.connect(self._handler_real_data)
 
     def CommConnect(self, block=True):
         return super().CommConnect(block)
@@ -145,3 +161,17 @@ class HughKiwoom(Kiwoom):
     '''
     신규생성 함수
     '''
+
+    def _handler_real_data(self, code, real_type, data):
+        if real_type == "주식우선호가":
+            ask01 =  self.GetCommRealData(code, 27)
+            bid01 =  self.GetCommRealData(code, 28)
+            self.logging(f"최우선매도호가: {ask01} 최우선매수호가: {bid01}")
+        elif real_type == "주식체결":
+            # 체결 시간
+            time =  self.GetCommRealData(code, 20)
+            print(time, end=" ")
+
+            # 현재가
+            price =  self.GetCommRealData(code, 10)
+            print(price)

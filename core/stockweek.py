@@ -15,6 +15,11 @@ from core.runningstate import RunningState
 
 from api.hughkiwoom import HughKiwoom
 
+import time
+import datetime
+
+from api.slack import Slack
+
 
 class StockWeek(QObject):
     threadLogEvent = QtCore.pyqtSignal(str)
@@ -22,15 +27,17 @@ class StockWeek(QObject):
 
     def __init__(self):
         super().__init__()
-        self.logger = Logging().logger
         self.runningState = RunningState.STOP
         self.kiwoom: HughKiwoom = HughKiwoom(self, False)
+        self.logger = Logging().logger
         self.strategy_list = {"buy": {"simpleBuy": SimpleBuyStrategy}, "sell": {"simpleSell": SimpleSellStrategy}}
         self.buy_strategy = Strategy()
         self.sell_strategy = Strategy()
 
         with open('config/config.json') as f:
-            config = json.load(f)
+            self.config = json.load(f)
+
+        self.slack = Slack(self, self.config['SLACK_TOKEN'])
 
         # 리소스 정의
         self.account = Account()
@@ -52,6 +59,12 @@ class StockWeek(QObject):
             self.change_running_state(RunningState.ERROR)
 
     def handler_tr(self, screen, rqname, trcode, record, next):
+        pass
+
+    def handler_chejan(self, gubun, item_cnt, fid_list):
+        pass
+
+    def handler_msg(self, screen, rqname, trcode, msg):
         pass
 
     def run(self):
@@ -115,10 +128,7 @@ class StockWeek(QObject):
             df = self.kiwoom.block_request("opw00001", 계좌번호=account, 비밀번호="", 비밀번호입력매체구분="00",
                                            조회구분=1, output="예수금상세현황", next=0)
 
-            # 예수금
-            # 예수금 = int(df['예수금'][0])
-            # print(예수금)
-            # print(df)
+            df.to_excel('예수금상세현황.xlsx')
             for column in df.columns:
                 print(column, df.loc[0][column])
         except Exception as e:
@@ -131,29 +141,40 @@ class StockWeek(QObject):
     def onclick_test_btn1(self):
         self.logging('onclick_test_btn1')
         try:
-            account_no = self.kiwoom.GetLoginInfo("ACCNO")
-            self.logging(str(account_no))
-            # code_list = self.request.get_code_list_by_market(0)
-            # self.logging(str(code_list))
+
+            전일가 = self.kiwoom.GetMasterLastPrice("005930")
+            self.logging(전일가)
+
+            종목상태 = self.kiwoom.GetMasterStockState("005930")
+            self.logging(종목상태)
+
+            df = self.kiwoom.block_request("opt10001",
+                                      종목코드="005930",
+                                      output="주식기본정보",
+                                      next=0)
+
+            now = datetime.datetime.now()
+            date_time = now.strftime('%Y%m%d, %H:%M:%S')
+            self.logging(date_time + ' : ' + df['현재가'][0])
+
         except Exception as e:
             self.logging("except" + str(e))
 
     def onclick_test_btn2(self):
         self.logging('onclick_test_btn2')
         try:
-            account_no = self.kiwoom.GetLoginInfo("ACCOUNT_CNT")
-            self.logging(str(account_no))
-            account_no = self.kiwoom.GetLoginInfo("USER_ID")
-            self.logging(str(account_no))
+            account_no = self.kiwoom.GetLoginInfo("ACCNO")[0]
+            self.logging(account_no)
+            trdata = self.kiwoom.block_request("opw00001", 계좌번호=account_no, 비밀번호="0000", 비밀번호입력매체구분="00", 조회구분=1,output="예수금상세현황", next=0)
+
         except Exception as e:
             self.logging("except" + str(e))
 
     def onclick_test_btn3(self):
         self.logging('onclick_test_btn3')
         try:
-            print(self.kiwoom.GetLoginInfo("ACCNO"))
-            print(self.kiwoom.ocx.dynamicCall("GetLoginInfo(QString)", "ACCNO"))
-            print(self.kiwoom.connected)
+            self.slack.notification(text="pretext test2")
+
         except Exception as e:
-            self.logging("except" + str(e))
+            self.logging("except slack " + str(e))
         self.logging(self.account.str_account_stock())
